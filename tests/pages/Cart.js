@@ -1,29 +1,15 @@
-// pages/Cart.js
-import { test,expect } from '@playwright/test';
-
 export class Cart {
   constructor(page) {
     this.page = page;
-    // General locators
-    this.continueShopping = page.locator('#continue-shopping');
-    this.cartIcon = page.locator('#shopping_cart_container > a');
-    this.cartList = page.locator('.cart_item');
-    this.checkOut = page.locator('#checkout');
-   
+    this.cartItems = page.locator('.cart_item');
+    this.checkoutButton = page.locator('[data-test="checkout"]');
   }
-
-  async goToContinueShopping() {
-    await this.continueShopping.click();
-   
+ 
+  async getCartCount() {
+    return await this.cartItems.count();
   }
-
-  async goToCheckout() {
-    await this.checkOut.click();
+ 
+  async checkout() {
+    await this.checkoutButton.click();
   }
-
-  async productCount() {
-  return await this.cartList.count();
-  }
-
-
 }
