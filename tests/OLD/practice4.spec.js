@@ -1,0 +1,34 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://github.com/');
+  await page.locator('[id="FormControl--:Rjahb:"]').getByRole('button', { name: 'Sign up for GitHub' }).click();
+  await page.getByRole('button', { name: 'Continue with Google' }).click();
+  await page.getByRole('textbox', { name: 'Email or phone' }).click();
+  await page.goto('https://github.com/');
+  await page.locator('#hero').getByRole('link', { name: 'Try GitHub Copilot' }).click();
+  await page.getByRole('button', { name: 'Resources' }).click();
+  await page.goto('https://github.com/');
+  await page.locator('#hero_user_email').click();
+  await page.locator('#hero_user_email').click();
+  await page.locator('#hero_user_email').fill('wbnqkwnfkgb jq');
+  await page.locator('#hero_user_email').press('ArrowRight');
+  await page.locator('#hero_user_email').press('ArrowRight');
+  await page.locator('#hero_user_email').press('ArrowRight');
+  await page.locator('#hero_user_email').press('ArrowRight');
+  await page.locator('#hero_user_email').press('ArrowRight');
+  await page.locator('#hero_user_email').press('ArrowRight');
+  await page.locator('#hero_user_email').fill('');
+  await page.getByRole('button', { name: 'Search or jump to…' }).click();
+  await page.getByText('Copilot Learn More').click();
+  await page.getByTestId('Grid-:R31b:').locator('img').first().click();
+  await page.locator('.d-flex.flex-justify-between').first().click();
+  await page.getByRole('alert', { name: 'Announcement' }).click();
+  await page.getByLabel('Global').locator('div').filter({ hasText: 'GitHub Sponsors Fund open' }).first().click();
+  await page.getByRole('button', { name: 'Resources' }).click();
+  await page.getByRole('button', { name: 'Solutions' }).click();
+  await page.getByRole('tab', { name: 'Plan' }).click();
+  await page.getByRole('tab', { name: 'Collaborate' }).click();
+  await page.getByRole('tab', { name: 'Automate' }).click();
+  await page.getByRole('tab', { name: 'Secure' }).click();
+});
