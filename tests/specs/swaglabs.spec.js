@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginSwag } from '../pages/LoginSwag.js';
 import { InventoryPage } from '../pages/InventoryPage.js';
-import { Cart } from '../pages/CartPage.js';
+import { Cart } from '../pages/Cart.js';
 import{ CheckoutPage } from'../pages/CheckoutPage.js';
  
 test('E2E - Login, Add to Cart, Checkout, and Verify Order', async ({ page }) => {

@@ -12,14 +12,18 @@ export class CheckoutPage {
   async fillCheckoutInfo(firstName, lastName, postalCode) {
     await this.firstNameInput.fill(firstName);
     await this.lastNameInput.fill(lastName);
+    await this.postalCodeInput.waitFor({state:'visible'});
+    
     await this.postalCodeInput.fill(postalCode);
   }
  
   async continue() {
+    await this.continueButton.waitFor({state:'visible'});
     await this.continueButton.click();
   }
  
   async finish() {
+    await this.page.waitForSelector('[data-test="finish"]');
     await this.finishButton.click();
   }
 }
