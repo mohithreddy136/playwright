@@ -36,15 +36,15 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
-    - name: Generate Allure Report
-      run: |
-       npm install -g allure-commandline
-       allure generate allure-results --clean -o allure-report
-    - name: Upload Allure Report
-      uses: actions/upload-artifact@v3
-      with:
-        name: allure-report
-        path: allure-report/
+    # - name: Generate Allure Report
+    #   run: |
+    #    npm install -g allure-commandline
+    #    allure generate allure-results --clean -o allure-report
+    # - name: Upload Allure Report
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: allure-report
+    #     path: allure-report/
 
     
         
